@@ -8,8 +8,10 @@ export class Excel {
     const $root = document.createElement('div')
 
     this.components.forEach( Component => {
+      // Создаем компоненту
       const component = new Component()
-      console.log(component)
+      // Выводим HTML
+      $root.insertAdjacentHTML('beforeend', component.toHTML())
     });
 
     return $root
